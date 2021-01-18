@@ -9,7 +9,8 @@ budgetdata = os.path.join('Resources','budget_data.csv')
 dates = []
 PNL = []
 changes = []
-change = []
+change = ["Change", 0]
+
 
 #read data from csv file 
 with open(budgetdata, 'r') as csvfile:
@@ -23,17 +24,16 @@ with open(budgetdata, 'r') as csvfile:
     
     for row in budgetdata_csv:
     #import data from csv to new list
-      if row <= 1:
-        change.append("Change", 0)
-      else:
-        change.append[PNL[1] - next(budgetdata_csv[1])
-        dates.append(row[0])
-        PNL.append(int(row[1]))
+      dates.append(row[0])
+      PNL.append(int(row[1]))
     #* Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
     ##Changes between each 
-    
-   
-         
+      #if row < 2:
+      
+      #else:
+      currentchange = row[1] - next[row[1]
+      change.append(currentchange)
+
     print(dates)
     #count dates
     totalmonths = len(dates)
@@ -49,5 +49,7 @@ with open(budgetdata, 'r') as csvfile:
 
         
     #* The greatest increase in profits (date and amount) over the entire period
-
+      ##gi = max(change)
+      
     #* The greatest decrease in losses (date and amount) over the entire period
+      ##gd = min(change)
