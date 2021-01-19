@@ -44,11 +44,19 @@ with open(budgetdata, 'r') as csvfile:
     #Total Sum of P&L
     total = sum(PNL)
     print(f"The total Profit & Loss is {total}")
-
-
         
     #* The greatest increase in profits (date and amount) over the entire period
       ##gi = max(change)
       
     #* The greatest decrease in losses (date and amount) over the entire period
       ##gd = min(change)
+ouput = zip[]
+
+# Specify the file to write to
+output_path = os.path.join("..", "output", "new.csv")
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w', newline='') as csvfile:
+
+    # Initialize csv.writer
+    csvwriter = csv.writer(csvfile, delimiter=',')
