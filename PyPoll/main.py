@@ -2,7 +2,27 @@
 import csv
 import os
 
-with open(os.path.join("Resources","budget_data.csv"))as f:
+#Create lists for data
+votes = []
+candidates = []
+county = []
+
+
+with open(os.path.join("Resources","election_data.csv"))as f:
   data = csv.reader(f)
-  for row in data:
-        print(row)
+  
+
+  #total number of votes
+  #total votes = len[votes]
+
+  #All candidates
+  #candidates = unique.row[2]
+
+  #candidate percentages & votes
+  #
+
+  #winner based on popular vote
+
+  #print results
+
+  #output results to csv
