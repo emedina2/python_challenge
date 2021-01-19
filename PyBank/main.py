@@ -28,12 +28,11 @@ with open(budgetdata, 'r') as csvfile:
       PNL.append(int(row[1]))
     #* Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
     ##Changes between each 
-      #if row < 2:
-      
-      #else:
-      currentchange = row[1] - next[row[1]
-      change.append(currentchange)
-
+      if row > 1:
+        currentchange = (int(row[1]) - int(next(row[1])))
+      #print(currentchange)
+        change.append(currentchange)
+    print(change)
     print(dates)
     #count dates
     totalmonths = len(dates)
