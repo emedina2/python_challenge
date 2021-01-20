@@ -64,9 +64,9 @@ Winner: {winner}
 data_output = os.path.join("Analysis", "analysis.csv")
 
 # Write data to a .csv file
-with open(data_output, "w") as csvfile:
+with open(data_output, "w", newline='') as csvfile:
     writer = csv.writer(csvfile)
     # To save specific data input as a row in the csv
     writer.writerow(["Election Results", "-------------------------"])
-    writer.writerow("Total Votes: {total_votes}")
+    writer.writerow(["Total Votes: {total_votes}"])
  
