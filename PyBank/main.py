@@ -34,7 +34,7 @@ with open(budgetdata, 'r') as csvfile:
 total = sum(PNL)
 totalchanges = sum(changes)
 print(len(changes))
-average = int(totalchanges / (totalmonths -1))
+average = (totalchanges / (totalmonths -1))
 average = round(average,2)       
     #* The greatest increase in profits (date and amount) over the entire period
 gi = max(changes)

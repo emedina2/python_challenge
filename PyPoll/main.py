@@ -3,6 +3,7 @@ import csv
 import os
 import numpy as np
 
+
 #Create lists for data
 candidates = []
 candidate = []
@@ -41,37 +42,30 @@ maxvote = max(candidatevotes)
 index = candidatevotes.index(maxvote)
 winner = candidates[index]
 
+# Assign the path for the output file
+data_output = os.path.join("Analysis", "analysis.csv")
 
-  #print results
-
-def printcandidates():
-  print(f"""
+# Write data to a .csv file
+w = open(data_output, "w+")
+w.write(f"""
 --------------------
 Election Results
 --------------------
 Total Votes: {total_votes}
 ---------------------
 """)
-  i = 0
-  for x in range(len(candidates)):
-    print(f"{candidates[i]} : {votepercent[i]} % ({candidatevotes[i]})")
-    i += 1
-  print(f'''
+i = 0
+for x in range(len(candidates)):
+  w.write(f"{candidates[i]} : {votepercent[i]} % ({candidatevotes[i]})\n")
+  i += 1
+w.write(f'''
 --------------------
 Winner: {winner}
 --------------------
 ''')
-#output results to csv
-# Assign the path for the output file
-data_output = os.path.join("Analysis", "analysis.csv")
-
-# Write data to a .csv file
-
-w = open(data_output, "w+")
-w.write(printcandidates(i))
-w.write("-------------------------\n")
-w.write("Election Results")
-w.write("\n-------------------------\n")
-w.write(f"Total Votes: {total_votes}")
-w.write("\n-------------------------\n")
-w.write("")
+w.close()
+#print information from text file in terminal
+r = open(data_output, "r")
+lines = r.readlines()
+for line in lines:
+  print(line)
