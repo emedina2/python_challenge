@@ -16,7 +16,7 @@ NextRow = []
 with open(budgetdata, 'r') as csvfile:
     budgetdata_csv = csv.reader(csvfile, delimiter=',')
     #print(budgetdata_csv)
-    ##print(type(budgetdata_csv))
+    #print(type(budgetdata_csv))
 
     #read header row
     csv_header = next(budgetdata_csv)
@@ -29,13 +29,13 @@ with open(budgetdata, 'r') as csvfile:
       NextRow.append(int(next(row[1]))
     #* Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
     ##Changes between each 
-      #if row > 1:
+      #if row >: 1
       #currentchange = (PNL - NextRow)
       #print(currentchange)
         #change.append(currentchange)
    # print(change)
-  print(dates)
-  print(NextRow)
+#print(dates)
+#print(NextRow)
     #count dates
     totalmonths = len(dates)
     
