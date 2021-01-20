@@ -64,9 +64,10 @@ Winner: {winner}
 data_output = os.path.join("Analysis", "analysis.csv")
 
 # Write data to a .csv file
-with open(data_output, "w", newline='') as csvfile:
-    writer = csv.writer(csvfile)
+with open(data_output, "w", newline='') as outfile:
+    writer = csv.writer(outfile)
     # To save specific data input as a row in the csv
-    writer.writerow(["Election Results", "-------------------------"])
-    writer.writerow(["Total Votes: {total_votes}"])
+    print >>>outfile,("Election Results")
+    print >>>outfile,("-------------------------")
+    print >>>outfile,("Total Votes: {total_votes}")
  
