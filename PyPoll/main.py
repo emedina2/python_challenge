@@ -68,5 +68,5 @@ with open(data_output, "w") as csvfile:
     writer = csv.writer(csvfile)
     # To save specific data input as a row in the csv
     writer.writerow(["Election Results", "-------------------------"])
-    writer.writerow(f"Total Votes: {total_votes}")
+    writer.writerow("Total Votes: {total_votes}")
  
