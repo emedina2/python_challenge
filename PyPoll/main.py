@@ -43,31 +43,35 @@ winner = candidates[index]
 
 
   #print results
-print(f"""
-  --------------------
-  Election Results
-  --------------------
-  Total Votes: {total_votes}
-  ---------------------
+
+def printcandidates():
+  print(f"""
+--------------------
+Election Results
+--------------------
+Total Votes: {total_votes}
+---------------------
 """)
-i = 0
-for keys in candidate_data.items():
-  #print(f"{candidate_data['Candidate'][i]} : {candidate_data['Percent'][i]} % ({candidate_data['Votes'][i]})")
-  i += 1
-print(f'''
+  i = 0
+  for x in range(len(candidates)):
+    print(f"{candidates[i]} : {votepercent[i]} % ({candidatevotes[i]})")
+    i += 1
+  print(f'''
 --------------------
 Winner: {winner}
 --------------------
 ''')
-  #output results to csv
-# Create the path for the filename
+#output results to csv
+# Assign the path for the output file
 data_output = os.path.join("Analysis", "analysis.csv")
 
 # Write data to a .csv file
-with open(data_output, "w", newline='') as outfile:
-    writer = csv.writer(outfile)
-    # To save specific data input as a row in the csv
-    print >>>outfile,("Election Results")
-    print >>>outfile,("-------------------------")
-    print >>>outfile,("Total Votes: {total_votes}")
- 
+
+w = open(data_output, "w+")
+w.write(printcandidates(i))
+w.write("-------------------------\n")
+w.write("Election Results")
+w.write("\n-------------------------\n")
+w.write(f"Total Votes: {total_votes}")
+w.write("\n-------------------------\n")
+w.write("")
